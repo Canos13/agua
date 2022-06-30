@@ -1,31 +1,31 @@
 ﻿
 
 #menu {
-    background-color:#4bb777;
+    background-color:rgb(38, 107, 211);
    
 }
 
 
 .header-sec .overlay{
-    background:rgba(8, 134, 74, 0.68);
+    background:rgba(38, 107, 211, 0.829);
 }
 
 
 .testi-sec .overlay{
-    background:rgba(8, 134, 74, 0.80);
+    background:rgba(38, 107, 211, 0.829);
 }
  
 
 .single-price {
-    background-color:rgba(8, 134, 74,1);
+    background-color:rgba(38, 107, 211, 0.829);
 }
 .multi-price {
-    background-color:#4bb777;
+    background-color:rgb(38, 107, 211);
 }
 /*=====================================
   FOOTER STYLES 
     ===================================*/
 
  .myfooter {
-    background-color:#4bb777;
+    background-color:rgb(38, 107, 211);
 }
