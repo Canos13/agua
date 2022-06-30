@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es-MX"> 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -8,6 +8,7 @@
     <link href="view/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="view/css/style.css" rel="stylesheet"/>  
     <link href="view/css/themes/green.css" rel="stylesheet" />   
+    
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
 </head>
 <body >
