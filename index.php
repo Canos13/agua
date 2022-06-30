@@ -8,7 +8,7 @@
     <link href="view/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="view/css/style.css" rel="stylesheet"/>  
     <link href="view/css/themes/green.css" rel="stylesheet" />   
-    
+
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css' />
 </head>
 <body >
@@ -26,11 +26,10 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#home">Inicio</a></li>
-                    <li><a href="#features">Sección 1</a></li>              
-                    <li><a href="#pricing">Sección 2</a></li>
-                    <li><a href="#developers">Sección 3</a></li>
-                    <li><a href="#contact">Sección 4</a></li>
+                    <li><a href="#home">INICIO</a></li>
+                    <li><a href="#features">CONSULTAR DATOS</a></li>              
+                    <li><a href="#pricing">SUBIR DATOS</a></li>
+                    <li><a href="#developers">ACERCA DE</a></li>
                 </ul>
             </div>
         </div>
@@ -212,7 +211,7 @@
         </div>          
     </section> -->
 
-    <section class="contact" id="contact" >
+    <!-- <section class="contact" id="contact" >
         <div class="container">
             <div class="row text-center " >
                 <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">     
@@ -242,7 +241,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     
     <div class="myfooter">
         &copy; Universidad de la Cañada | Licenciatura en Informática
