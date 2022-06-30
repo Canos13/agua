@@ -27,8 +27,8 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#home">INICIO</a></li>
-                    <li><a href="#features">CONSULTAR DATOS</a></li>              
-                    <li><a href="#pricing">SUBIR DATOS</a></li>
+                    <li><a href="consulta/">CONSULTAR DATOS</a></li>              
+                    <li><a href="subir/">SUBIR DATOS</a></li>
                     <li><a href="#developers">ACERCA DE</a></li>
                 </ul>
             </div>
