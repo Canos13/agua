@@ -58,9 +58,7 @@ CREATE TABLE `estado` (
   `id_estado` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(110) CHARACTER SET utf8 DEFAULT NULL,
   `id_municipio` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_estado`),
-  KEY `id_municipio` (`id_municipio`),
-  CONSTRAINT `estado_ibfk_1` FOREIGN KEY (`id_municipio`) REFERENCES `municipio` (`id_municipio`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`id_estado`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -109,7 +107,8 @@ CREATE TABLE `municipio` (
   `id_municipio` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(110) CHARACTER SET utf8 DEFAULT NULL,
   `cp` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_municipio`)
+  PRIMARY KEY (`id_municipio`),
+  `id_estado` int(11)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
