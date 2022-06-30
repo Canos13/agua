@@ -17,7 +17,17 @@
                 echo "Error: ".$e->getMessage();
             }
         }
-    }
+
+        public function nuevo(){
+            try{
+                $conect = new Conexion();
     
-    $conect = new Conexion();
+            }catch(Exception $e){
+    
+            }finally{
+                close();
+            }
+        }
+        
+    }
 ?>

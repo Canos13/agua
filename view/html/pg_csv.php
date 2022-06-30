@@ -1,4 +1,13 @@
-<?php  require "controller/gtablacsv.php";?>
+<?php  
+    require "controller/gtablacsv.php";
+
+    /* si se gargo el archivo csv para el siguinte form*/
+    $secargo = false;
+
+    /* Direccion del csv_file */
+    /* $csv_file = "C:/xampp/htdocs/leercsv/archivos_csv\NIVEL_RIOS_DIA.csv"; */
+    $csv_file = "";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,21 +26,33 @@
 </head>
 <body>
     <div class="container">
-        <form>
-            <div class="form-group">
-                <label for="exampleFormControlFile1">Seleccione el archivo CSV</label>
-                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        <form method="post" action="">
+            <div class="form-group" >
+                <label for="archivoCSV">Seleccione un archivo</label>
+                <input type="file" class="form-control-file" id="archivo" name="archivo"  accept=".csv" required>
             </div>
+            <button type="submit" class="btn btn-primary" id="subirCSV" name="subirCSV">Enviar</button>
         </form>
-    </div>    
+    </div>  
+
+    <br>
 
     <?php
-        /* Direccion del csv_file */
-        $csv_file = "C:/xampp/htdocs/leercsv/archivos_csv\NIVEL_RIOS_DIA.csv";
+        
+        /* Es el post del archivo */
+        require "controller/subir_csv.php";
+
+        if($secargo){
+            echo "se cargo el csv";
+            echo $csv_file;
+        }else{
+            echo "no se cargo el csv";
+        }
+
         /* Si  el csv_file cuenta cin yn titulo */
         $titulo = false; /* si es true tien titulo */
         
-        generatablacsv($csv_file,$titulo);
+        /* generatablacsv($csv_file,$titulo); */
     ?>
 </body>
 </html>
