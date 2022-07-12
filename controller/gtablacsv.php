@@ -1,6 +1,6 @@
 <?php
     /* Fincion para imprimir la tabla con los datos del csv para vissualizar los datos*/
-    function generatablacsv($csv_file,$titulo){
+    function generatablacsv($csv_file, $titulo){
         $csvfile = fopen($csv_file,'r');
         if( $csvfile !== FALSE){
             $i = 0;
@@ -59,6 +59,14 @@
                     $('#data_csv_file').DataTable();
                 } );  
             </script>";
+
+            /* echo "
+                <script>
+                    $(document).on('ready', () => {
+                        $('#data_csv_file').DataTable();
+                    } );  
+                </script>
+            "; */
             
             echo "total de registros = ".$i;
     
