@@ -25,7 +25,7 @@
         <br>
     <div class="container">
         <div class="row justify-content-md-center">
-            <p>** Si va ha "Consultar un  declaratoria" no se habilitara la seleccion contigua.</p>
+            <p>** Algunas selecciones no habilitaran la seleccion contigua.</p>
         </div>
         <form action="" method="post" >
             <div class="form-row justify-content-md-center">
