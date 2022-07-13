@@ -200,8 +200,8 @@
                                             <th>Causas</th>
                                             <th>Fecha de inicio de la declaratoria</th>
                                             <th>Fecha de fin de la declaratoria</th>
-                                            <th>Nombre del rio</th>
-                                            <th>Nivel del rio</th>
+                                            <th>Nombre del mar</th>
+                                            <th>Nivel del mar</th>
                                         </thead>
                                         <tbody> ';
                                         $listaDeclaratoriasmar = $data_db->lists_declaratoiasmar();
