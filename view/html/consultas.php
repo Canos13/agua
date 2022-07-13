@@ -147,7 +147,45 @@
 
                 }elseif($accion == 3){ /* consulta de niveles de los rios en  la declaratorias*/
                     require("model/Rio.php");
-                    $id_declaratoria = intval($_POST['type_reg_data']);
+
+                    echo '<div class="row-flex">
+                            <div class="container">
+                                <div class="col-lg-12">    
+                                    <table id="data_declaratoria" class="table table-striped table-bordered" style="width:100%">
+                                        <thead>
+                                            <th>Id</th>
+                                            <th>Fenomeno</th>
+                                            <th>Causas</th>
+                                            <th>Fecha de inicio de la declaratoria</th>
+                                            <th>Fecha de fin de la declaratoria</th>
+                                            <th>Nombre del rio</th>
+                                            <th>Nivel del rio</th>
+                                        </thead>
+                                        <tbody> ';
+                                        $listaDeclaratoriasrio = $data_db->lists_declaratoiasrio();
+
+                                        foreach($listaDeclaratoriasrio as $declaratoriasrio){
+                                            printf('<tr>');
+                                                printf('<td>%d</td>',$declaratoriasrio->getId());
+                                                printf('<td>%s</td>',$declaratoriasrio->getFenomeno());
+                                                printf('<td>%s</td>',$declaratoriasrio->getCausas());
+                                                printf('<td>%s</td>',$declaratoriasrio->getFecha_inicio());
+                                                printf('<td>%s</td>',$declaratoriasrio->getFecha_fin());
+                                                printf('<td>%s</td>',$declaratoriasrio->getNombre());
+                                                printf('<td>%s</td>',$declaratoriasrio->getNivel());
+                                            printf('</tr>');
+                                        }
+
+                                    echo '</tbody>
+                                    </table>
+                                        <script>
+                                            $(document).ready(function() {
+                                                $("#data_declaratoria").DataTable();
+                                            } );  
+                                        </script>
+                                </div>
+                            </div>
+                        </div> ';
 
                 }elseif($accion == 4){/* consulta de niveles de los mares en  la declaratorias*/
                     require("model/Mar.php");

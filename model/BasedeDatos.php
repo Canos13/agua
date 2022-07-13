@@ -52,5 +52,28 @@
 
     }
 
+    public function lists_declaratoiasrio(){
+        $listaDeclaratoriasrio = array();
+        $consulta = "SELECT declaratoria.id_declaratoria, declaratoria.fenomeno, 
+                    declaratoria.causas, declaratoria.fecha_registro, 
+                    declaratoria.fecha_inicio,declaratoria.fecha_fin, rio.nombre, rio.nivel_rio 
+                    From declaratoria,rio
+                    WHERE declaratoria.id_declaratoria = rio.id_declaratoria;";
+        $resultado = $this->sql->query($consulta);
+        while($registro = $resultado->fetch_assoc()){
+            $declaratoriasrio = new Rio();
+            $declaratoriasrio->setId($registro['id_declaratoria']);
+            $declaratoriasrio->setFenomeno($registro['fenomeno']);
+            $declaratoriasrio->setCausas($registro['causas']);
+            $declaratoriasrio->setFecha_inicio($registro['fecha_inicio']);
+            $declaratoriasrio->setFecha_fin($registro['fecha_fin']);
+            $declaratoriasrio->setNombre($registro['nombre']);
+            $declaratoriasrio->setNivel($registro['nivel_rio']);
+
+            array_push($listaDeclaratoriasrio, $declaratoriasrio);
+        }
+        return $listaDeclaratoriasrio;
+    }
+
  }
 ?>
