@@ -22,12 +22,20 @@
 
             <div class="form-row justify-content-md-center">
                 <div class=" form-group col-md-6">
-                <button type="submit"  id="savedata" name="savedata" class="btn btn-primary form-control">Guardar en InfoWater</button>
+                <input type="submit"  id="savedata" name="savedata" class="btn btn-primary form-control" value="hola">Guardar en InfoWater</input>
                 </div>
             </div>
         </form>
         <script src="view/js/list_declaratoria.js"></script>
     </div>
 <?php
+echo "afuera del post";
+echo  $_POST['type_accion'];
+        if(isset($_POST['savedata'])){
+            $dir_csv_file = $_POST['dirfile'];
+            $cont_title = $_POST['titletf'];
+             echo  $_POST['type_accion'];
+            echo "eneknxksmxsldmldscmdlcmdlcmdlcdcdcd";
+        }
     /* require "controller/save_csv_in_bd.php"; */
 ?>

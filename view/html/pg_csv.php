@@ -88,7 +88,7 @@
                  </div>';
             echo "<br>";
             require "view/html/type_insert.php";
-            require "controller/save_csv_in_bd.php";
+            /* require "controller/save_csv_in_bd.php"; */
             echo "<br>";
             generatablacsv($csv_file,$titulo);
         }else{
