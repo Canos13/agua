@@ -1,17 +1,18 @@
-<?php 
-    class Estado{
-        private $nombre;
+<?php
+    require_once("Municipio.php");
+    class Estado extends Municipio{
+        private $ide;
+        private $nombree;
 
         public function __construct(){
-            $this->nombre = "";
+            $this->ide = '';
+            $this->nombree = '';
         }
 
-        public function setNombre($nombte){
-            $this->nombre = $nombre;
-        }
+        public function setIde($ide){ $this->ide = $ide;}
+        public function getIde(){ return $this->ide; }
 
-        public function getNombre(){
-            return $this->nombre;
-        }
+        public function setNombree($nombree){$this->nombree = $nombree;}
+        public function getNombree(){return $this->nombree;}
     }
 ?>

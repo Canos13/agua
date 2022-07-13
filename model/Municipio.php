@@ -1,27 +1,22 @@
-<?php 
-    class Municipio{
-        private $nombre;
+<?php
+    require_once("Declaratoria.php");
+    class Municipio extends Declaratoria{
+        private $idm;
+        private $nombrem;
         private $cp;
 
         public function __construct(){
-            $this->nombre = "";
-            $this->cp = 0;
+            $this->idm = '';
+            $this->nombrem = '';
+            $this->cp = ''; 
         }
+        public function setIdm($idm){ $this->idm = $idm;}
+        public function getIdm(){ return $this->idm; }
+        
+        public function setNombrem($nombrem){$this->nombrem = $nombrem;}
+        public function getNombrem(){return $this->nombrem;}
 
-        public function setNombre($nombte){
-            $this->nombre = $nombre;
-        }
-
-        public function getNombre(){
-            return $this->nombre;
-        }
-
-        public function setCp($cp){
-            $this->cp = $cp;
-        }
-
-        public function getCp(){
-            return $this->cp;
-        }
+        public function setCp($cp){$this->cp = $cp;}
+        public function getCp(){return $this->cp;}
  }
 ?>

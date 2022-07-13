@@ -19,7 +19,7 @@
                                     echo '<thead>';
                                     echo '<tr>';
                                         for($j=0; $j<$numero; $j++){
-                                            echo '<th>'.$csv_data[$j].'</th>';
+                                            echo '<th>'.utf8_encode($csv_data[$j]).'</th>';
                                         }
                                     echo '</tr>';
                                     echo '</thead>';
@@ -40,7 +40,7 @@
                             if($i>0){
                                     echo '<tr>';
                                         for($j=0; $j<$numero; $j++){
-                                            echo '<td>'.$csv_data[$j].'</td>';
+                                            echo '<td>'.utf8_encode($csv_data[$j]).'</td>';
                                         }
                                     echo '</tr>';
                                 
@@ -59,22 +59,16 @@
                     $('#data_csv_file').DataTable();
                 } );  
             </script>";
-
-            /* echo "
-                <script>
-                    $(document).on('ready', () => {
-                        $('#data_csv_file').DataTable();
-                    } );  
-                </script>
-            "; */
             
-            echo "total de registros = ".$i;
-    
+            echo ' <p>total de lineas en archivo leidos= '.$i.'</p>';
         }else{
-            echo "Archivo vacio";
-    
+            echo '<div clas="container">
+                    <div clas="row justify-content-md-center">
+                        <p>Archivo vacio</p>
+                    </div>
+                </div>
+            ';
         }
-    
         fclose($csvfile);
     }
     

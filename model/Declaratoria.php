@@ -1,5 +1,6 @@
 <?php 
     class Declaratoria{
+        private $id;
         private $fenomeno;
         private $causas;
         private $fecha_registro;
@@ -7,51 +8,30 @@
         private $fecha_fin;
 
         public function __construct(){
-            $this->fenomeno = "";
-            $this->causas = "";
-            $this->fecha_resgistro = "00/00/0000";
-            $this->fecha_inicio = "00/00/0000";
-            $this->fecha_fin= "00/00/0000";
+            $this->id = '';
+            $this->fenomeno = '';
+            $this->causas = '';
+            $this->fecha_resgistro = '';
+            $this->fecha_inicio = '';
+            $this->fecha_fin= '';
         }
 
-        public function setFenomeno($fenomeno){
-            $this->fenomneno = $fenomeno;
-        }
+        public function setId($id){ $this->id = $id;}
+        public function getId(){ return $this->id; }
 
-        public function getFenomeno(){
-            return $this->fenomeno;
-        }
+        public function setFenomeno($fenomeno){ $this->fenomeno = $fenomeno; }
+        public function getFenomeno(){return $this->fenomeno; }
 
-        public function setCausas($causas){
-            $this->causas = $causas;
-        }
-        
-        public function getCausas(){
-            return $this->causas;
-        }
+        public function setCausas($causas){ $this->causas = $causas; }
+        public function getCausas(){return $this->causas;}
 
-        public function setFecha_registro($fecha_registo){
-            $this->fecha_registro = $fecha_registo;
-        }
+        public function setFecha_registro($fecha_registro){ $this->fecha_registro = $fecha_registro;}
+        public function getFecha_registro(){return $this->fecha_registro;}
 
-        public function getFecha_registro(){
-            return $this->getFecha_registro;
-        }
+        public function setFecha_inicio($fecha_inicio){$this->fecha_inicio = $fecha_inicio;}
+        public function getFecha_inicio(){return $this->fecha_inicio;}
 
-        public function setFecha_inicio($fecha_inicio){
-             $this->setFecha_inicio  = $fecha_inicio;
-        }
-
-        public function getFecha_inicio(){
-            return $this->getFecha_inicio;
-        }
-
-        public function setFecha_fin(){
-            $this->fecha_fin = $fecha_fin;
-        }
-
-        public function getFecha_fin(){
-            return $this->fecha_fina;
-        }
+        public function setFecha_fin($fecha_fin){ $this->fecha_fin = $fecha_fin;}
+        public function getFecha_fin(){return $this->fecha_fin;}
     }
 ?>

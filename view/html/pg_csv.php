@@ -1,5 +1,5 @@
 <?php  
-    /* require "controller/gtablacsv.php"; */
+    require "controller/gtablacsv.php";
 
     /* si se gargo el archivo csv para el siguinte form*/
     $secargo = false;
@@ -9,7 +9,7 @@
     /* $csv_file = "C:/xampp/htdocs/agua/arch_csv/NIVEL_RIOS_DIA.csv"; */
     $csv_file = "";
 
-    $titulo = true; /* si es true tien titulo */
+    $titulo = false; /* si es true tien titulo */
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -26,10 +26,15 @@
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css"> -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap4.min.css">
 
-    <!-- <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script> -->
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap4.min.js"></script>
     
+
+    <!--  -->
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 </head>
 <body>
     
@@ -43,11 +48,16 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-sm-6">
-            <form method="post" action="" enctype="multipart/form-data"> 
+            <form method="post" action="" enctype="multipart/form-data">
                 <div class="input-group mb-3">
-                    <!-- <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupFileAddon01">Archivo</span>
-                    </div> -->
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck1" name="customCheck1">
+                        <label class="custom-control-label" for="customCheck1">
+                            El archivo contine titulos para sus columnas 
+                        </label>
+                    </div>
+                </div>
+                <div class="input-group mb-3">
                     <div class="custom-file">
                         <!-- con SCSS para cambiar el browse:: buscar  y en input lang="es"-->
                         <input type="file" class="custom-file-input" id="archivo" name="archivo" aria-describedby="inputGroupFileAddon01" accept=".csv" required>
@@ -75,47 +85,13 @@
                     <div class="row justify-content-md-center">
                        <p>Se esta haciendo uso del archivo: <strong>'.$inuse.'</strong></p> 
                     </div>
-                </div>';
-            /* require "arch_title.php"; */
-            echo '<div class="container">
-            <div class="row justify-content-md-center">
-                <p>¿Su archivo contiene titulos en sus columnas?</p> 
-            </div>
-            <div class="row justify-content-md-center">
-                <form  id="titulosyn">
-                   <div class="row">
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
-                                <label class="form-check-label" for="exampleRadios1"> Si, si contiene un titulos </label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                                <label class="form-check-label" for="exampleRadios2"> No, no contiene un titulos </label>
-                            </div>
-                        </div>
-                            <input type="text" name="datotitulo" style="display:none" value ="'.$csv_file.'">
-                        <div class="col">
-                            <button type=submit class="btn btn-primary" id="titulos" name="titulos">Aceptar</button>
-                        </div>
-                   </div>
-                </form>
-            </div>
-        </div>';
-            /* if(isset($_POST['titulos'])){
-                $valor = $_POST['exampleRadios'];
-                if($valor == 'option1'){
-                    echo "option1";
-                    generatablacsv($csv_file,$titulo);
-                }
-                if($valor == 'option2'){
-                    echo "option2";
-                }
-            } */
+                 </div>';
+            echo "<br>";
+            require "view/html/type_insert.php";
+            require "controller/save_csv_in_bd.php";
+            echo "<br>";
+            generatablacsv($csv_file,$titulo);
         }else{
-            /* echo "no se cargo el csv"; */
             echo '<div class="container">
                     <div class="row justify-content-md-center">
                         <p>no se ha cargado ningun archivo csv</p>
@@ -123,43 +99,6 @@
                 </div>';
         }
 
-        /* Si  el csv_file cuenta cin yn titulo */
-        
-        
-
     ?>
-    <div id="csvtable"> 
-       <!--  <script>
-            $(document).on("ready", () => {
-                $('#data_csv_file').DataTable();
-            } );  
-        </script> -->
-    </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>	
-    <script>
-        $(document).on("ready", () => {				
-            btnOnclick();
-                $.ajaxSetup({
-                "cache": false
-            });
-        });
-            
-        var btnOnclick = () => {
-            $('#titulos').on('click', (e) => {
-                e.preventDefault();
-                var frm = $("#titulosyn").serialize();
-                /* console.log(frm); */
-                $.ajax({
-                    type: "POST",
-                    url: "view/html/tablas.php",
-                    data: frm
-                }).done((info) => {
-                    $('#csvtable').html(info);
-                    console.log(info);
-                });
-            })
-        }
-    </script>
-    
 </body>
 </html>

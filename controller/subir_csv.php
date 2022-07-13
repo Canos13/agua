@@ -1,4 +1,4 @@
-<?php
+<?php 
     if(isset($_POST['subircsv'])){
         /* print_r($_FILES); */
         /* $fecha=getdate(); */
@@ -12,6 +12,14 @@
             $secargo = true;
             $inuse = $file_name;
             $csv_file = $directorio.$file_name;
+
+            $check = isset($_POST['customCheck1']) ? "checked" : "unchecked";
+            if($check == "checked"){
+                $titulo = true;
+            }elseif($check == "unchecked"){
+                $titulo = false;
+            }
+
         }else{
             echo "Archivo no guardado";
         }

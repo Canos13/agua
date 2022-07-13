@@ -3,22 +3,14 @@
 
     /* echo $_POST['exampleRadios']; */
     $valor = $_POST['exampleRadios'];
-    
+    $cadena1 = '<//?php $titulo= true; generatablacsv($csv_file,$titulo) ?//>';
+    $cadena2 = '<//?php $titulo= false; generatablacsv($csv_file,$titulo) ?//>';
     $csv_file = $_POST['datotitulo'];
     if($valor == 'option1'){
-        /* echo "option1";
-        echo " ";
-        echo $csv_file; */
-        $titulo = true;
-        generatablacsv($csv_file,$titulo);
+        printf($cadena1);
         
     }
     if($valor == 'option2'){
-        /* echo $csv_file;
-        echo " ";
-        echo "option2"; */
-        $titulo = false;
-        generatablacsv($csv_file,$titulo);
-        
+        printf($cadena2);
     }
 ?>
