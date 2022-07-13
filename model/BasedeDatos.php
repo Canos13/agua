@@ -75,5 +75,28 @@
         return $listaDeclaratoriasrio;
     }
 
+    public function lists_declaratoiasmar(){
+        $listaDeclaratoriasmar = array();
+        $consulta = "SELECT declaratoria.id_declaratoria, declaratoria.fenomeno, 
+                    declaratoria.causas, declaratoria.fecha_registro, 
+                    declaratoria.fecha_inicio,declaratoria.fecha_fin, mar.nombre, mar.nivel_mar 
+                    From declaratoria,mar
+                    WHERE declaratoria.id_declaratoria = mar.id_declaratoria;";
+        $resultado = $this->sql->query($consulta);
+        while($registro = $resultado->fetch_assoc()){
+            $declaratoriasmar = new Mar();
+            $declaratoriasmar->setId($registro['id_declaratoria']);
+            $declaratoriasmar->setFenomeno($registro['fenomeno']);
+            $declaratoriasmar->setCausas($registro['causas']);
+            $declaratoriasmar->setFecha_inicio($registro['fecha_inicio']);
+            $declaratoriasmar->setFecha_fin($registro['fecha_fin']);
+            $declaratoriasmar->setNombre($registro['nombre']);
+            $declaratoriasmar->setNivel($registro['nivel_mar']);
+
+            array_push($listaDeclaratoriasmar, $declaratoriasmar);
+        }
+        return $listaDeclaratoriasmar;
+    }
+
  }
 ?>
